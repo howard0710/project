@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  pointer-events: none;
+}
+
+body {
+  background-color: rgb(99, 75, 237);
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+
+header h1 {
+  color: white;
+  font-size: 50px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form input {
+  border-radius: 25px;
+  padding: 1rem;
+  height: 3.2rem;
+  width: 22rem;
+  border: none;
+}
+
+.todo-button {
+  cursor: pointer;
+  color: rgb(255, 162, 0);
+  background-color: white;
+  margin-left: 1rem;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  font-size: 50px;
+  transition: background-color 0.7s;
+  transition: color 0.7s;
+}
+
+.todo-button:hover {
+  background-color: rgb(255, 162, 0);
+  color: white;
+}
+
+.style-select {
+  position: relative;
+}
+
+.style-select select {
+  display: none;
+}
+
+select {
+  color: rgb(255, 162, 0);
+  cursor: pointer;
+  position: relative;
+  margin-left: 1.25rem;
+  border-radius: 50px;
+  height: 3.2rem;
+  width: 10rem;
+  border: none;
+  font-size: 20px;
+  padding: 0.75rem;
+  list-style: none;
+}
+
+input[type=text] {
+  font-size: 24px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section div {
+  display: flex;
+}
+section div button {
+  width: 3rem;
+  border: none;
+}
+section div button:hover {
+  cursor: pointer;
+}
+section div button.complete {
+  background-color: rgb(255, 162, 0);
+  color: white;
+  font-size: 1.5rem;
+}
+section div button.trash {
+  background-color: rgb(147, 145, 145);
+  color: white;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-size: 1.5rem;
+}
+section div p {
+  height: 3.7rem;
+  width: 20rem;
+  padding: 0.75rem;
+  background-color: white;
+  color: black;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+section div.incompleted {
+  font-size: 24px;
+  margin: 0.5rem;
+}
+
+.completed {
+  opacity: 0.5;
+}/*# sourceMappingURL=styles.css.map */
