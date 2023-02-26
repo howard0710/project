@@ -1,21 +1,25 @@
+// Clean code
+
 const Addtodolist = document.querySelector("form button");
 const section = document.querySelector("section ");
+
 Addtodolist.addEventListener("click", (e) => {
-  e.preventDefault();
+  e.preventDefault(); // 技術債
   let Form = e.target.parentElement;
-  let Todotext = Form.children[0].value;
+  let Todotext = Form.children[0].value; // 技術債 nodeList => DOM Document Object Modal
   if (Todotext === "") {
     alert("訊息不能為空");
-    return;
   }
 
   const Todo = document.createElement("div");
   Todo.classList.add("incompleted");
+
   let Text = document.createElement("p");
   Text.classList.add("todo-text");
   Text.innerText = Todotext;
   Todo.appendChild(Text);
   section.appendChild(Todo);
+
   const completeButton = document.createElement("button");
   completeButton.classList.add("complete");
   completeButton.innerHTML = '<i class="fa-solid fa-check"></i>';
@@ -23,12 +27,13 @@ Addtodolist.addEventListener("click", (e) => {
     const completeFunction = e.target.parentElement;
     completeFunction.classList.toggle("completed");
   });
+
   const trashButton = document.createElement("button");
   trashButton.classList.toggle("trash");
   trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
   trashButton.addEventListener("click", (e) => {
     let text = Todo.children[0].innerText;
-    let myListArray = JSON.parse(localStorage.getItem("list2"));
+    let myListArray = JSON.parse(localStorage.getItem("list2")); // 技術債
     myListArray.forEach((item, index) => {
       if (text === item.Todotext) {
         myListArray.splice(index, 1);
@@ -38,6 +43,7 @@ Addtodolist.addEventListener("click", (e) => {
     const trashFunction = e.target.parentElement;
     trashFunction.remove();
   });
+
   Todo.appendChild(completeButton);
   Todo.appendChild(trashButton);
 
@@ -55,10 +61,13 @@ Addtodolist.addEventListener("click", (e) => {
     localStorage.setItem("list2", JSON.stringify(mylistarray));
   }
 });
+
 const list = section.childNodes;
 const select = document.querySelector("select");
+
 select.addEventListener("change", (e) => {
   list.forEach(function (check) {
+    // map filter 技術債
     switch (e.target.value) {
       case "all":
         check.style.display = "flex";
